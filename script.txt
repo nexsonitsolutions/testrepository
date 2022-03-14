@@ -1,0 +1,37 @@
+for i in {1..5}
+do
+docker run --name j$i -d -P jenkins
+done
+
+docker image prune
+docker volumen prune -a
+
+
+
+FROM centos
+MAINTAINER intelliq
+RUN yum -y update
+RUN yum install -y httpd
+COPY index.html /var/www/html
+ENTRYPOINT ["/usr/sbin/httpd", "-D","FOREGROUND"]
+EXPOSE 80
+
+FROM ubuntu
+MAINTAINER intelligent
+RUN apt-get update
+RUN apt-get install -y nginx
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
+EXPOSE 80
+
+
+
+
+
+
+
+
+
+
+
+
+

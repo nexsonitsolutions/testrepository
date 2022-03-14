@@ -98,6 +98,7 @@ Add Worker Machines to Kubernates Master
 =========================================
 
 Copy kubeadm join token from and execute in Worker Nodes to join to cluster
+kubecadm join-token worker
 
 
 

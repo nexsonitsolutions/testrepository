@@ -1,3 +1,5 @@
+this is a quick for loop to create 5 jenkins containers
+
 for i in {1..5}
 do
 docker run --name j$i -d -P jenkins
